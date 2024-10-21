@@ -5,6 +5,7 @@
 		"lib": ["dom", "esnext"],
 		"jsx": "react",
 		"declaration": true,
+		"importHelpers": true,
 		"declarationDir": "dist",
 		"strict": true,
 		"moduleResolution": "node",
