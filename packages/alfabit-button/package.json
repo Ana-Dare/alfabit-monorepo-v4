@@ -1,6 +1,12 @@
 {
-	"name": "@alfabit/button",
-	"version": "0.1.0",
+	"name": "@cicatrizdev/alfabit-button",
+	"description": "Botão do Design System Alfabit",
+	"author": {
+		"name": "Cicatriz",
+		"email": "contato@cicatriz.dev"
+	},
+	"license": "MIT",
+	"version": "0.1.1",
 	"main": "dist/index.js",
 	"module": "dist/index.esm.js",
 	"types": "dist/index.d.ts",
