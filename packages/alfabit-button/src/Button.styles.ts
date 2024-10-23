@@ -15,7 +15,7 @@ export const StyledButton = styled.button<ButtonProps>`
 	${({ variant }) =>
 		variant === 'primary' &&
 		css`
-			background: #5033c3;
+			background: #ff0000;
 			color: #ffffff;
 			border: none;
 
