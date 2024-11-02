@@ -3,7 +3,7 @@ import { fn } from '@storybook/test';
 import { Button } from '@cicatrizdev/alfabit-button';
 
 const meta = {
-	title: 'Example/Button',
+	title: 'Moléculas/Button',
 	component: Button,
 	parameters: {
 		layout: 'centered',
