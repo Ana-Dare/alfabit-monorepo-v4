@@ -72,8 +72,8 @@ const meta = {
 		],
 	},
 	argTypes: {
-		onSubmit: { action: 'submit' },
-		fields: { control: false },
+		onSubmit: { action: 'submit', description: 'Evento de disparo ao enviar o formulário' },
+		fields: { description: 'Campos do formulário' },
 	},
 } satisfies Meta<typeof Form>;
 
