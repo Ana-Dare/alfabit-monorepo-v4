@@ -12,11 +12,12 @@
 		"build-storybook": "storybook build"
 	},
 	"dependencies": {
+		"@cicatrizdev/alfabit-button": "workspace:*",
+		"@cicatrizdev/alfabit-input": "workspace:*",
+		"@cicatrizdev/alfabit-tokens": "^0.1.1",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
-		"styled-components": "^6.1.13",
-		"@cicatrizdev/alfabit-button": "workspace:*",
-		"@cicatrizdev/alfabit-input": "workspace:*"
+		"styled-components": "^6.1.13"
 	},
 	"devDependencies": {
 		"@chromatic-com/storybook": "^1.9.0",
