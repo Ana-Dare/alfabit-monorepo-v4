@@ -37,15 +37,19 @@ const StyledButtonField = styled.div`
 `;
 
 const Form = (props: FormProps) => {
+	const handleSubmit = (e: React.FormEvent) => {
+		e.preventDefault();
+		props.onSubmit();
+	};
 	return (
-		<StyledForm>
+		<StyledForm onSubmit={handleSubmit}>
 			{props.fields.map((field) => (
 				<StyledInputField key={field.label}>
 					<StyledInput label={field.label} placeholder={field.placeholder} />
 				</StyledInputField>
 			))}
 			<StyledButtonField>
-				<Button onClick={props.onSubmit}>Enviar</Button>
+				<Button>Enviar</Button>
 			</StyledButtonField>
 		</StyledForm>
 	);
@@ -58,7 +62,6 @@ const meta = {
 		layout: 'centered',
 	},
 	tags: ['autodocs'],
-	// args: { disabled: false, placeholder: 'Placeholder' },
 } satisfies Meta<typeof Form>;
 
 export default meta;
