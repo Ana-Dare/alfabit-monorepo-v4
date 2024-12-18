@@ -28,6 +28,29 @@ async function createComponent(componentName) {
 				files.push(...subFiles.map((subFile) => path.join(file, subFile)));
 				continue;
 			}
+
+			if (
+				file.endsWith('.tsx') ||
+				file.endsWith('.ts') ||
+				files.endsWith('.json') ||
+				files.endsWith('js')
+			) {
+				console.log(`Processando o arquivo: ${file}`);
+				let content = await fs.readFile(filePath, 'utf-8');
+
+				content = content.replace(/Component/g, componentName);
+				content = content.replace(/component-template/g, componentName.toLowerCase());
+
+				await fs.writeFile(filePath, content);
+			}
+		}
+		const renames = [
+			['src/Component.tsx', `src/${componentName}.tsx`],
+			['src/Component.styles.ts', `src/${componentName}.styles.ts`],
+			['src/Component.stories.ts', `../../apps/docs/src/stories/${componentName}.stories.ts`],
+		];
+
+		for (const [oldPath, newPath] of renames) {
 		}
 	} catch (error) {
 		console.error(`Erro ao criar o componente ${componentName}:`, error);
