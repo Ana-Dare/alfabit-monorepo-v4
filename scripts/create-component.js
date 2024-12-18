@@ -6,17 +6,20 @@ async function createComponent(componentName) {
 		const templateDir = path.join(__dirname, '../packages/component-template');
 		const targetDir = path.join(__dirname, '../packages', `alfabit-${componentName.toLowerCase()}`);
 
+		// Verificar se o diretório do template existe
 		if (!fs.existsSync(templateDir)) {
 			throw new Error(`Não foi encontrado o diretório de template ${targetDir}`);
 		}
-
+		// Verificar se o diretório de destino existe
 		if (fs.existsSync(targetDir)) {
 			throw new Error(`O diretório do componente ${targetDir} já existe`);
 		}
 
+		// Copiar template de componente
 		await fs.copy(templateDir, targetDir);
 		console.log(`Template copiado com sucesso para ${targetDir}`);
 
+		// Substituir "Component" pelo novo nome do componente em todos os arquivos
 		const files = await fs.readdir(targetDir);
 
 		for (const file of files) {
@@ -44,6 +47,8 @@ async function createComponent(componentName) {
 				await fs.writeFile(filePath, content);
 			}
 		}
+
+		// Renomear os arquivos
 		const renames = [
 			['src/Component.tsx', `src/${componentName}.tsx`],
 			['src/Component.styles.ts', `src/${componentName}.styles.ts`],
@@ -51,7 +56,18 @@ async function createComponent(componentName) {
 		];
 
 		for (const [oldPath, newPath] of renames) {
+			const oldFullPath = path.join(targetDir, oldPath);
+			const newFullPath = path.join(targetDir, newPath);
+
+			if (fs.existsSync(oldFullPath)) {
+				await fs.rename(oldFullPath, newFullPath);
+				console.log(`Renomeando: ${oldFullPath} -> ${newFullPath}`);
+			} else {
+				console.warn(`Aviso: Arquivo não encontrado para ser renomeado: ${oldPath}`);
+			}
 		}
+
+		console.log(`Componente ${componentName} criado com sucesso!`);
 	} catch (error) {
 		console.error(`Erro ao criar o componente ${componentName}:`, error);
 	}
