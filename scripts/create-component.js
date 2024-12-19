@@ -35,8 +35,8 @@ async function createComponent(componentName) {
 			if (
 				file.endsWith('.tsx') ||
 				file.endsWith('.ts') ||
-				files.endsWith('.json') ||
-				files.endsWith('js')
+				file.endsWith('.json') ||
+				file.endsWith('js')
 			) {
 				console.log(`Processando o arquivo: ${file}`);
 				let content = await fs.readFile(filePath, 'utf-8');
