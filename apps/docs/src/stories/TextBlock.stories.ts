@@ -1,6 +1,5 @@
-// @ts-ignore
 import type { Meta, StoryObj } from '@storybook/react';
-import { TextBlock } from '@cicatrizdev/alfabit-component';
+import { TextBlock } from '@cicatrizdev/alfabit-textblock';
 
 const meta = {
 	title: 'Moléculas/TextBlock',
