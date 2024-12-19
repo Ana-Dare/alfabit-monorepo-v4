@@ -6,7 +6,8 @@
 	"scripts": {
 		"dev": "turbo dev",
 		"build": "turbo build",
-		"check-types": "turbo check-types"
+		"check-types": "turbo check-types",
+		"release": "pnpm changeset version && git add . && git commit -m 'chore: release' && pnpm publish -r --access public --no-git-checks"
 	},
 	"keywords": [],
 	"author": "",
