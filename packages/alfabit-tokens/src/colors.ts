@@ -30,3 +30,15 @@ export const violet = {
 	tertiary: '#E2BDFF',
 	quaternary: '#F5E8FF',
 };
+
+export const green = {
+	primary: '#28a745',
+};
+
+export const red = {
+	primary: '#dc3545',
+};
+
+export const yellow = {
+	primary: '#ffc107',
+};
