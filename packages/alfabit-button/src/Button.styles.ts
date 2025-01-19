@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { blue, gray } from '@cicatrizdev/alfabit-tokens';
 import { ButtonProps } from './Button';
 
 export const StyledButton = styled.button<ButtonProps>`
@@ -13,45 +12,41 @@ export const StyledButton = styled.button<ButtonProps>`
 	transition: all 0.2s ease-in-out;
 	cursor: pointer;
 
-	${({ variant, theme }) =>
+	${({ variant, theme }: { variant?: ButtonProps['variant']; theme: ButtonProps['theme'] }) =>
 		variant === 'primary' &&
 		css`
-			background: ${theme.colors.error};
-			color: ${gray.white};
+			background: ${theme?.colors.primary};
+			color: ${theme?.colors.white};
 			border: none;
 
 			&:hover {
-				background: ${blue.hover};
+				background: ${theme?.colors.primary};
 			}
 
 			&:active {
-				background: ${blue.click};
+				background: ${theme?.colors.primary};
 			}
 
 			&:disabled {
-				background: ${gray.disabled};
+				background: ${theme?.colors.disabled};
 				cursor: not-allowed;
 			}
 		`}
 
-	${({ variant }) =>
+	${({ variant, theme }: { variant?: ButtonProps['variant']; theme?: ButtonProps['theme'] }) =>
 		variant === 'secondary' &&
 		css`
 			background: transparent;
-			color: ${blue.primary};
-			border: 2px solid ${blue.primary};
-
-			&:hover {
-				background: #ede9ff;
-			}
+			color: ${theme?.colors.primary};
+			border: 2px solid ${theme?.colors.primary};
 
 			&:active {
-				background: #d5ccff;
+				background: ${theme?.colors.secondary};
 			}
 
 			&:disabled {
-				color: #c3c3c3;
-				border-color: #c3c3c3;
+				color: ${theme?.colors.disabled};
+				border-color: ${theme?.colors.disabled};
 				cursor: not-allowed;
 			}
 		`}
