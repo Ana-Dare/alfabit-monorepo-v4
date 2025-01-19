@@ -1,5 +1,5 @@
 import { createContext, useState } from 'react';
-import { Theme } from '@cicatrizdev/alfabit-tokens';
+import { Theme, defaultTheme } from '@cicatrizdev/alfabit-tokens';
 
 export const ThemeContext = createContext<{
 	theme: Theme | undefined;
@@ -10,7 +10,7 @@ export const ThemeContext = createContext<{
 });
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-	const [appTheme, setAppTheme] = useState<Theme | undefined>(undefined);
+	const [appTheme, setAppTheme] = useState<Theme | undefined>(defaultTheme);
 
 	return (
 		<ThemeContext.Provider value={{ theme: appTheme, changeTheme: setAppTheme }}>
