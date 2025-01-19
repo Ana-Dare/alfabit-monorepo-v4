@@ -25,8 +25,11 @@ importers:
   apps/alfabit-demo:
     dependencies:
       '@cicatrizdev/alfabit-button':
-        specifier: ^1.0.0
-        version: 1.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+        specifier: ^1.1.0
+        version: 1.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+      '@cicatrizdev/alfabit-tokens':
+        specifier: ^1.1.0
+        version: 1.1.0
       '@remix-run/node':
         specifier: ^2.13.1
         version: 2.13.1(typescript@5.6.3)
@@ -609,12 +612,15 @@ packages:
     resolution: {integrity: sha512-vYQ+TcfktEE3GHnLZXHCzXF/sN9dw+KivH8a5cmPyd9YtQs7fZtHrEgsIjWpYycXiweKMo1Lm1RZsjxk8DH3rA==}
     engines: {node: '>=16.0.0', yarn: '>=1.22.18'}
 
-  '@cicatrizdev/alfabit-button@1.0.0':
-    resolution: {integrity: sha512-d2K5b2pDeguHqyDJvcv2UZxw/0ZugflLw+jbhLKV4agg5RdOORz+X28lakHy2Pybx+vA4JH9FEhsGJ58M8rd5A==}
+  '@cicatrizdev/alfabit-button@1.1.0':
+    resolution: {integrity: sha512-O0+TookxlExCQu2E0+zfPxy8gVwFM4uC5cAnqWR9yefPrm4xZnck4z7qQU847z+MNwqpDj6hPzWeBP8uvWUCsw==}
     peerDependencies:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
       styled-components: ^5.0.0 || ^6.0.0
+
+  '@cicatrizdev/alfabit-tokens@1.1.0':
+    resolution: {integrity: sha512-SDR+qTa0IbR6t9KV0T3lRQF1ZyuyhiTRBTD6brK4YdHV6rxTTrkwZ2vJSDbFZEEe3k8N4NpwSt6mpnfa8UAD0w==}
 
   '@emotion/hash@0.9.2':
     resolution: {integrity: sha512-MyqliTZGuOm3+5ZRSaaBGP3USLw6+EGykkwZns2EPC5g8jJ4z9OrdZY9apkl3+UP9+sdz76YYkwCKP5gh8iY3g==}
@@ -5659,11 +5665,13 @@ snapshots:
       - '@chromatic-com/playwright'
       - react
 
-  '@cicatrizdev/alfabit-button@1.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
+  '@cicatrizdev/alfabit-button@1.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
     dependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       styled-components: 6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+
+  '@cicatrizdev/alfabit-tokens@1.1.0': {}
 
   '@emotion/hash@0.9.2': {}
 
