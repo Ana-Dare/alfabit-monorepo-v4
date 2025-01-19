@@ -1,14 +1,16 @@
 import { Button } from '@cicatrizdev/alfabit-button';
-import { darkTheme, lightTheme, Theme } from '@cicatrizdev/alfabit-tokens';
+import { darkTheme, lightTheme } from '@cicatrizdev/alfabit-tokens';
 import type { MetaFunction } from '@remix-run/node';
-import { useState } from 'react';
+import { useContext } from 'react';
+// eslint-disable-next-line import/no-unresolved
+import { ThemeContext } from '~/context/themeContext';
 
 export const meta: MetaFunction = () => {
 	return [{ title: 'Alfabit Demo' }, { name: 'description', content: '' }];
 };
 
 export default function Index() {
-	const [appTheme, setAppTheme] = useState<Theme | undefined>(undefined);
+	const { theme, changeTheme } = useContext(ThemeContext);
 	return (
 		<div className='flex h-screen items-center justify-center'>
 			<div className='flex flex-col items-center gap-16'>
@@ -17,10 +19,10 @@ export default function Index() {
 						Bem-vindo ao Design System Alfabit
 					</h1>
 				</header>
-				<Button theme={appTheme}>Hello World, Alfabit npm!</Button>
+				<Button theme={theme}>Hello World, Alfabit npm!</Button>
 				<Button
 					variant='secondary'
-					onClick={() => setAppTheme(appTheme === lightTheme || !appTheme ? darkTheme : lightTheme)}
+					onClick={() => changeTheme(theme === lightTheme || !theme ? darkTheme : lightTheme)}
 				>
 					Trocar o tema
 				</Button>
