@@ -15,7 +15,7 @@
 		"@cicatrizdev/alfabit-button": "workspace:*",
 		"@cicatrizdev/alfabit-input": "workspace:*",
 		"@cicatrizdev/alfabit-textblock": "workspace:*",
-		"@cicatrizdev/alfabit-tokens": "^1.0.0",
+		"@cicatrizdev/alfabit-tokens": "workspace:*",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
 		"styled-components": "^6.1.13"

@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyledButton } from './Button.styles';
+import { defaultTheme, Theme } from '@cicatrizdev/alfabit-tokens';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	variant?: 'primary' | 'secondary' | 'tertiary';
@@ -9,6 +10,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 	iconPosition?: 'left' | 'right';
 	disabled?: boolean;
 	onClick?: () => void;
+	theme?: Theme;
 }
 
 export const Button = ({
@@ -17,9 +19,10 @@ export const Button = ({
 	children,
 	disabled,
 	onClick,
+	theme = defaultTheme,
 }: ButtonProps) => {
 	return (
-		<StyledButton size={size} variant={variant} disabled={disabled} onClick={onClick}>
+		<StyledButton size={size} variant={variant} disabled={disabled} onClick={onClick} theme={theme}>
 			{children}
 		</StyledButton>
 	);

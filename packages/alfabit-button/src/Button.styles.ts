@@ -13,10 +13,10 @@ export const StyledButton = styled.button<ButtonProps>`
 	transition: all 0.2s ease-in-out;
 	cursor: pointer;
 
-	${({ variant }) =>
+	${({ variant, theme }) =>
 		variant === 'primary' &&
 		css`
-			background: ${blue.primary};
+			background: ${theme.colors.error};
 			color: ${gray.white};
 			border: none;
 
