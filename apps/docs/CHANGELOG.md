@@ -1,5 +1,14 @@
 # docs
 
+## 0.0.3
+
+### Patch Changes
+
+- Updated dependencies
+  - @cicatrizdev/alfabit-button@1.1.0
+  - @cicatrizdev/alfabit-tokens@1.1.0
+  - @cicatrizdev/alfabit-textblock@1.0.0
+
 ## 0.0.2
 
 ### Patch Changes
