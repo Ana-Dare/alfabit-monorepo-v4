@@ -14,8 +14,8 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "rollup -c",
-		"dev": "rollup -c -w"
+		"build": "echo 'rollup -c'",
+		"dev": "echo 'rollup -c -w'"
 	},
 	"peerDependencies": {
 		"react": "^17.0.0 || ^18.0.0",
