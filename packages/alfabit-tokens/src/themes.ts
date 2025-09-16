@@ -4,7 +4,7 @@ export interface ITheme {
   colors: Icolors;
 }
 
-interface Icolors { 
+interface Icolors {
   background: string;
   primary: string;
   text: string;
@@ -14,6 +14,7 @@ interface Icolors {
   warning: string;
   black: string;
   white: string;
+  disabled?: string;
 }
 
 const commonColors = {
@@ -31,6 +32,7 @@ export const lightTheme: ITheme = {
     success: green.primary,
     error: red.primary,
     warning: yellow.primary,
+    disabled: gray.primary,
   },
 };
 
@@ -44,6 +46,7 @@ export const darkTheme: ITheme = {
     success: green.primary,
     error: red.primary,
     warning: yellow.primary,
+    disabled: gray.primary,
   },
 };
 
